@@ -14,19 +14,19 @@ let notes = [
   {
     id: 1,
     content: 'Tengo Hambre',
-    content: '2019-05-30T18:39:34.091Z',
+    date: '2019-05-30T18:39:34.091Z',
     important: false
   },
   {
     id: 2,
     content: 'Tengo Sueño',
-    content: '2019-05-30T18:39:34.091Z',
+    date: '2019-05-30T18:39:34.091Z',
     'impo,rtant': false
   },
   {
     id: 3,
     content: 'Tengo Hambre otra vez',
-    content: '2019-05-30T18:39:34.091Z',
+    date: '2019-05-30T18:39:34.091Z',
     important: false
   }
 ]
@@ -86,7 +86,7 @@ app.use((req, res) => {
   })
 })
 
-const PORT = 3001
+const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
   console.log(`Servidor en el puerto ${PORT}`)
 })
