@@ -10,6 +10,14 @@ const productSchema = new Schema({
   available: Boolean
 })
 
+productSchema.set('toJSON', {
+  transform: (document, returnedObject) => {
+    returnedObject.id = returnedObject._id
+    delete returnedObject._id
+    delete returnedObject.__v
+  }
+})
+
 const Product = model('Product', productSchema)
 
 module.exports = Product
