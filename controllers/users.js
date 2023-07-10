@@ -22,7 +22,7 @@ userRouter.post('/', async (request, response) => {
 
   const savedUser = await user.save()
 
-  response.json(savedUser)
+  response.status(200).json(savedUser)
 })
 
 module.exports = userRouter

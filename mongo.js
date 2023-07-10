@@ -7,3 +7,8 @@ mongoose.connect(connectionString).then(() => {
 }).catch(err => {
   console.log(err)
 })
+
+process.on('uncaughtException', (err) => {
+  mongoose.disconnect()
+  console.error(err)
+})

@@ -10,6 +10,7 @@ const productsRouter = require('./controllers/products')
 
 const app = express()
 const logger = require('./loggerMiddleware')
+const loginRouter = require('./controllers/login')
 
 app.use(express.json())
 
@@ -24,6 +25,8 @@ app.get('/', (req, res) => {
 app.use('/api/products', productsRouter)
 
 app.use('/api/users', usersRouter)
+
+app.use('/api/login', loginRouter)
 
 app.use((req, res) => {
   res.status(404).json({
