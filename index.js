@@ -4,7 +4,7 @@ require('./mongo')
 
 const express = require('express')
 const cors = require('cors')
-const Product = require('./models/Product')
+// const Product = require('./models/Product')
 const usersRouter = require('./controllers/users')
 const productsRouter = require('./controllers/products')
 
@@ -33,6 +33,6 @@ app.use((req, res) => {
     error: 'Not found'
   })
 })
-app.listen(3000, '0.0.0.0', () => {
+app.listen(3000, () => {
   console.log('Server ready')
 })

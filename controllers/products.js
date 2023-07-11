@@ -7,6 +7,38 @@ productRouter.get('/', async (req, res) => {
   res.json(products)
 })
 
+productRouter.delete('/', async (req, res) => {
+  // verify token
+  const authorization = req.get('authorization')
+  let token = null
+
+  if (authorization && authorization.toLowerCase().startsWith('bearer')) {
+    token = authorization.substring(7)
+  }
+
+  let decodedToken = {}
+
+  try {
+    decodedToken = jwt.verify(token, process.env.TOKEN_SECRET)
+  } catch (e) { }
+
+  if (!token || !decodedToken.id) {
+    return res.status(401).json({ error: 'token missing or invalid' })
+  }
+
+  // get product
+  const { body } = req
+
+  // delete product
+  const product = await Product.findByIdAndDelete(body.id)
+
+  if (product) {
+    res.status(204).end()
+  } else {
+    res.status(404).end()
+  }
+})
+
 productRouter.put('/', async (req, res) => {
   // verify token
   const authorization = req.get('authorization')
