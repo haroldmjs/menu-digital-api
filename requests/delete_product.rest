@@ -1,14 +1,14 @@
-DELETE https://menu-brioche-v2.fly.dev/api/products
+DELETE http://localhost:3000/api/products
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OGU4MWNkYmRkYmY5ZTBjNDI2YzNjMiIsInVzZXJuYW1lIjoiaGFyb2xkbWpzIiwiaWF0IjoxNjg4NzA0MjgxfQ.GG0hDHudaV13VYkhypRbBXoB7UahbxaIUX-tuO4ipdc
 
 {
-    "id" : "647e752f60fb5a9b2cd47f93",
-    "name" : "camaron",
-    "price" : 11.5,
-    "image" : "camaron.jpg",
-    "description" : "Camarones cerealizados, tártara estilo brioche, rodajas de tomate y lechuga.",
-    "category" : "brioches",
-    "favorite" : true,
-    "available" : false
+  "name": "natalia capresa",
+  "price": 10.5,
+  "image": "capresa.jpg",
+  "description": "Pollo crispy, queso mozarella gratinado, rodajas de tomate, mayopesto y lechuga.",
+  "category": "brioches",
+  "favorite": false,
+  "available": true,
+  "id": "647e752f60fb5a9b2cd47f9f"
 }
